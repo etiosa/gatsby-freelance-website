@@ -20,7 +20,7 @@ class Work extends Component {
     
     initConstu = () => {
 
-        this.container = document.querySelector('.work')
+        this.container = document.body
         this.itemWrapper = document.querySelector('.work')
     }
     //The get syntax binds an object property to a 
@@ -471,26 +471,7 @@ class Work extends Component {
 
                 
 
-              
-               
-                   <div className="work-root">
-                    <a className='work link w-inline-block'  target="_blank" rel="noopener" draggable="false" >
-
-                        <h1>Morjoy candles</h1>
-                        <span>website</span>
-                            <img src={ImageOne} alt="img1" />
-                        </a>
-                </div>
-                
-
-                <div className="work-root">
-                    <a className='work link w-inline-block' target="_blank" rel="noopener" draggable="false" >
-
-                        <h1>Morjoy candles</h1>
-                        <span>website</span>
-                        <img src={ImageOne} alt="img1" />
-                    </a>
-                </div>
+             
 
               {/*}  <div className="work-root">
                     <a className='work link w-inline-block' target="_blank" rel="noopener" draggable="false" >

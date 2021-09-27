@@ -147,7 +147,7 @@ class IndexPage extends Component {
         <Navbar />
         
         <Home />
-        <Work />
+      
       
      
     

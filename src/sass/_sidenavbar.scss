@@ -1,5 +1,61 @@
+/* mobille*/
 
 
+.app-nav-bar{
+    display:flex;
+    flex-direction:row;
+    padding-left:1em;
+    justify-content:space-around;
+    padding-top:2em;
+    
+    .root-logo{
+        padding:1em;
+         div:first-of-type{
+             display:inline-block;
+             width:1em;
+            // height:3.5em;
+             background:blue;
+             position:relative;
+             
+         }
+        div:last-of-type{
+            display: inline-block;
+            width: 1em;
+           // height: 2em;
+            background: black;
+        }
+          div:nth-child(2){
+              display: inline-block;
+              width: 1em;
+              //height: 2.8em;
+              background: red;
+
+          }
+    }
+
+    .nav-link-container{
+        padding:2em;
+        a{
+            margin-right:2em;
+            padding:1em;
+            font-family: FH Oscar;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .root-nav-bar {
     &::before {
         content: '';
@@ -100,7 +156,7 @@
     }
 }
 
-
+ */
 
 
 
@@ -304,7 +360,7 @@
     }
 }
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:600px) {
     .mobile-menu {
         display: none;
     }
@@ -320,12 +376,27 @@
             }
         }
     }
+      .root-logo{
+          padding: 0em !important ;
+      }
+      .nav-link-container{
+         padding: 2em 0em 5em 0em !important;
+         a{
+             padding:0.2em !important;
+         }
+      }
 
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:599px) {
 
     .nav-root {
         display: none;
     }
+    .app-nav-bar{
+        display: none;
+      
+
+    }
+    
 }
