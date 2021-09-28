@@ -40,16 +40,16 @@
   
 
     &::before {
-        content: '';
+       content: '';
         width: 20em;
         height: 20em;
         background-color: transparent;
         position: absolute;
         border-radius: 100%;
-        border: solid 0.01em #201f5b46;
+        border: solid 0.01em #86869226;
         z-index: -999;
         top: 2em;
-        right: -2em;
+        right: 2em;
 
     }
 }
@@ -62,13 +62,13 @@ grid-template-rows: repeat(3, 0.2fr);
 justify-content:center;
 grid-row-gap: 2em;
 &::before{
-    content: '';
+   content: '';
     width:20em;
     height: 20em;
     background-color: transparent;
     position: absolute;
     border-radius: 100%;
-    border: solid 0.01em #3c38a74f;
+    border: solid 0.01em #86869226;
     z-index: -999;
     top:0;
     right:0;
@@ -81,7 +81,7 @@ grid-row-gap: 2em;
     background-color: transparent;
     position: absolute;
     border-radius: 100%;
-    border: solid 0.01em #3b3a5c49;
+    border: solid 0.01em #86869226;
     z-index: -999;
     top:-1em;
     right:10em;
@@ -106,8 +106,9 @@ h2{
     }
 }
 
-
-
+.cta:visited{
+    color: white;
+}
 
 
 
@@ -152,6 +153,7 @@ h2{
      height: 6em;
      width:6em;
      border-radius: 100%;
+     position: relative;
      border: solid 0.1em #6D6C8F;
       text-align: center;
 
@@ -161,9 +163,17 @@ h2{
          font-family: FH Oscar;
          top:2em;
      }
+
    
 }
 
+.view:hover{
+    transition: all 0.7s ease;
+    background-color: #3B3A5C;
+    span{
+        color: white;
+    }
+}
 
 @media screen and (max-width:500px){
     .home-root{
@@ -242,7 +252,7 @@ h2{
 }
 
 
-@media screen and (min-width:1024px){
+/* @media screen and (min-width:1024px){
     .home-section{
        
 
@@ -251,48 +261,61 @@ h2{
         }
     }
 }
-
+ */
     
 
 
 
 @media screen and (min-width:1200px){
     .home-root{
+        h2{
+            font-size: 6em;
+        }
         &::after{
-            width:40em;
-            height: 40em;
+            width:35em;
+            height: 35em;
         }
         &::before{
-            width: 40em;
-            height: 40em;
+            width: 35em;
+            height: 35em;
         }
     }
     .home-section{
         &::before{
-            width: 40em;
-            height: 40em;
+            width: 35em;
+            height: 35em;
         }
     }
     .link-root{
         justify-content: space-evenly;
         .cta{
-            height:15em ;
-            width: 15em;
+            height:12em ;
+            width: 12em;
             &::before{
-                height: 15em;
-                width: 15em;
+                height: 12em;
+                width: 12em;
             }
             span{
-                font-size: 1.5em;
+                font-size: 1.2em;
 
             }
         }
         .view{
-            height: 15em;
-            width: 15em;
+            height: 12em;
+            width: 12em;
             span{
-                font-size: 1.5em;
+                font-size: 1.2em;
             }
+        }
+    }
+}
+@media screen and(min-width:1300px){
+    .home-root{
+        h2{
+            font-size: 7em;
+        }
+        p:nth-child(3) {
+            width: 40em;
         }
     }
 }

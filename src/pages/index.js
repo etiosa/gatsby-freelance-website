@@ -1,163 +1,113 @@
 import React,{Component} from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import "../sass/index.scss"
 import About from "../components/sections/About"
 import Contact from "../components/sections/Contact"
 import Home from "../components/sections/Home"
 import Work from "../components/sections/Work";
-import gsap, { Power2 } from "gsap";
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+import GlobalState from "../GlobalState"
+
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Line from "../components/line";
-import SideNavBar from "../components/SideBar"
 import Navbar from "../components/Navbar"
 
-const arryRef = [];
-const ar = [<Home />,
-
-  <Work />,
-  <About />,
-  <Contact />
-]
+gsap.registerPlugin(ScrollToPlugin)
 //const MAX_SECTION=2
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger );
+const arrayRef = [];
+
 class IndexPage extends Component {
   state = {
-    MAX_SECTION: 3,
-    currentIndex: 0,
-    index:0
+    MAX_SECTION: 4,
+    currentIndex: 0
   }
-
+ 
   componentDidMount() {
-   // window.addEventListener('wheel', this.next)
-    //console.log(com.greensock.plugins.ScrollToPlugin.version); // -> 1.8.0
+
+  this.mouseCurouser = document.querySelector('.cursor');
+    this.worksection = document.querySelector('.work-header');
+    this.work= document.querySelector('.work')
+    //console.log(this.worksection)
+
+    this.view = document.querySelector('.view')
+    console.log('view', this.view)
+ // navlink
+    this.navLink = document.querySelectorAll('.nav-link-container a');
+   // console.log(navLink)
+    
+    //mouse move when we move
+    window.addEventListener('mousemove', this.cursor)
+
+    this.navLink.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        this.mouseCurouser.classList.add('active-grow')
+      })
+
+      link.addEventListener('mouseleave', () => {
+        this.mouseCurouser.classList.remove('active-grow')
+      })
+    })
+    this.worksection.addEventListener('mouseover', () => {
+     
+      this.mouseCurouser.classList.add('cursour-work-section')
+      this.mouseCurouser.style.zIndex = 1;
+      console.log(this.mouseCurouser)
+      
+    })
+ 
+    this.worksection.addEventListener('mouseleave', () => {
+
+      this.mouseCurouser.classList.remove('cursour-work-section')
+      this.mouseCurouser.style.zIndex = -1;
+      
+    })
+    this.work.addEventListener('mouseover', () => {
+      this.work.classList.add('.work-cursour-over')
+
+    }) 
 
   }
+  cursor = (e) => {
+    
+    this.mouseCurouser.style.top = e.clientY + "px"
+    this.mouseCurouser.style.left = e.clientX+ "px"
 
-
-  goToSnapSection = (e) => {
-    //console.log("scroll")
-    //console.log(e)
-
-    //console.log(arryRef)
-    console.log('scroll')
-    let Delta = e.wheelDelta;
-    console.log(Delta)
-    //down wheel
-    if (Delta < 0) {
-      console.log('down')
-
-      if (this.state.currentIndex !== arryRef.length - 1) {
-        if (gsap.isTweening(window)) {
-          return;
-        }
-        else {
-          this.setState({ currentIndex: this.state.currentIndex + 1 })
-          this.goToSection(this.state.currentIndex)
-        }
-
-
-        // console.log(this.state.currentIndex)
-      }
-
-    }
-    //up wheel
-
-    else if (Delta > 0) {
-      console.log('up')
-      console.log(this.state.currentIndex)
-
-      //console.log(e.wheelDelta)
-      // console.log(this.state.currentIndex)
-      if (this.state.currentIndex !== arryRef.length && this.state.currentIndex > 0) {
-        console.log("back?")
-        if (gsap.isTweening(window)) {
-          return;
-        }
-        else {
-          this.setState({ currentIndex: this.state.currentIndex - 1 })
-          this.goToSection(this.state.currentIndex)
-        }
-
-      }
-
-
-    }
+    
   }
+
   createReferences = (ref) => {
-    console.log(ref)
-    if (arryRef.length !== this.state.MAX_SECTION) {
-      arryRef.push(ref);
-
+    if (arrayRef.length !== this.state.MAX_SECTION) {
+      arrayRef.push(ref)
     }
-
-
-    console.log(arryRef)
+    console.log(arrayRef)
   }
-  goToSection = (index) => {
-    // console.log(index)
 
-    console.log("gotosection")
-
-   // const timeline = gsap.timeline();
-   //console.log("index 0 offsettop",arryRef[0].offsetTop)
-
-   // console.log("index 1 offsettop", arryRef[1].offsetTop)
+  gotoSection = (index) => {
+    const timeline = gsap.timeline();
 
 
-
-    if (gsap.isTweening(window)) {
-      console.log("return?")
-      return;
-    }
-    else {
-     // timeline.to(window, { scrollTo: arryRef[index].offsetTop, duration:0.6, ease:'Power2.out'})
-      console.log("else")
-      console.log(arryRef[index].offsetTop)
-
-      //timeline.to(window, { scrollTo: arryRef[index].offsetTop, duration: 0.6, ease: "power2.out" });
-    }
-
-
-   //handle next section
-    // handle prev section
-
-    //click it reveal the item to you
-    //an array
-
-
+    timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 0.6, ease: "power2.out" });
 
   }
-  next = () => {
-    this.setState({index:this.state.index+1})
-  }
-  prev = () => {
-    console.log('prev', this.state.index)
-    this.setState({index:this.state.index-1})
-  }
+ 
 
   render() {
     return (
+      <GlobalState.Provider>
       <Layout>
         <Seo title="Home" />
-        <Navbar />
-        
-        <Home />
-        <Work />
-      
-     
-    
+        <div className='cursor'></div>
+        <Line/>
+        <Navbar gotoSection={this.gotoSection} />
+        <Home gotoSection={this.gotoSection}  createReferences={ this.createReferences}/>
        
-
-            
-  
-  
-    
+         <Work createReferences={this.createReferences}/>  
+        <About createReferences={this.createReferences}/> 
+        <Contact createReferences={this.createReferences} />
       </Layout>
+      </GlobalState.Provider>
     )
   }
 }
