@@ -86,9 +86,9 @@ class IndexPage extends Component {
 
   gotoSection = (index) => {
     const timeline = gsap.timeline();
+ 
 
-
-    timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 0.6, ease: "power2.out" });
+    timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 1, ease: "power2.out",delay:1 });
 
   }
  

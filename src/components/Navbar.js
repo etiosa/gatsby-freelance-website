@@ -50,12 +50,15 @@ const openMenu = () => {
     }
 
     const closeMenu = () => {
+        console.log('close?')
 
-        timeline.reverse(1.5);
+        timeline.reverse(1);
 
     }
     const gotToSection = (index) => {
-        props.gotoSection(index)
+        closeMenu()
+        props.gotoSection(index, closeMenu)
+       
     }
 
  return (
@@ -87,19 +90,31 @@ const openMenu = () => {
                     <div></div>
                 </div>
                 <ul ref={navRef} className='mobile-nav-bar' >
-
-                    <Link>
+                    <li>
+                     <Link onClick={() => { gotToSection(0) }} to='#home'>
                      <span>Home</span>
                     </Link>
-                    <Link>
+                 </li>
+                 <li>
+                     <Link onClick={() => { gotToSection(1) }} to='#work'>
                         <span>Work</span>
                     </Link>
-                    <Link>
-                        <span>Contact</span>
+                 </li>
+                 <li>
+                     <Link onClick={() => { gotToSection(2) }} to='#about'>
+                        <span>About</span>
                     </Link>
-                    <Link>
+                 </li>
+                 <li>
+                     <Link onClick={() => { gotToSection(3) }} to='#contact'>
+                         <span>Contact</span>
+                     </Link>
+                 </li>
+                 <li>
+                     <a href='https://obasuyietiosa.com/'>
                         <span>Blog</span>
-                    </Link>
+                    </a>
+                    </li>
                 </ul>
             </div>
         </React.Fragment>)

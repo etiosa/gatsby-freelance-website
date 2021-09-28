@@ -645,3 +645,12 @@ $animDuration: 5s;
         grid-column-gap: 7em;
     }
 }
+
+@media screen and (hover:none){
+    .cursor{
+        display: none;
+    }
+    body{
+          cursor:  unset;
+    }
+}
