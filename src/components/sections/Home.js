@@ -48,10 +48,10 @@ const Home = (props) => {
     return (
 
 
-        <section className='home-section' ref={el => HomeRef = el}>
+        <section className='home-section' ref={el => HomeRef = el} >
             <div className='home-root'>
-                <div className='text-root'>
-                    <span style={{ fontFamily: "FH OScar" }}>Hi, I'm </span>
+                <div className='text-root' style={{marginTop:'2em'}}>
+                    <span style={{ fontFamily: "FH OScar" }}>Hi, I'm a </span>
                     <span className='text'></span>
                 </div>
 
