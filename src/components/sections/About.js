@@ -1,10 +1,13 @@
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import GlobalState from "../../GlobalState";
 
 
 const About = (props) => {
     let aboutRef= useState(null)
     useEffect(() => {
         props.createReferences(aboutRef)
+        console.log(GlobalState)
+
 
     },[])
 

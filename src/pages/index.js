@@ -5,7 +5,8 @@ import Contact from "../components/sections/Contact"
 import Home from "../components/sections/Home"
 import Work from "../components/sections/Work";
 import gsap from "gsap";
-import{ScrollToPlugin}from "gsap/ScrollToPlugin"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+import GlobalState from "../GlobalState"
 
 
 import Layout from "../components/layout"
@@ -24,6 +25,7 @@ class IndexPage extends Component {
   }
  
   componentDidMount() {
+
   this.mouseCurouser = document.querySelector('.cursor');
     this.worksection = document.querySelector('.work-header');
     this.work= document.querySelector('.work')
@@ -93,6 +95,7 @@ class IndexPage extends Component {
 
   render() {
     return (
+      <GlobalState.Provider>
       <Layout>
         <Seo title="Home" />
         <div className='cursor'></div>
@@ -103,20 +106,8 @@ class IndexPage extends Component {
          <Work createReferences={this.createReferences}/>  
         <About createReferences={this.createReferences}/> 
         <Contact createReferences={this.createReferences} />
-        
-         
-        
-      
-      
-     
-    
-       
-
-            
-  
-  
-    
       </Layout>
+      </GlobalState.Provider>
     )
   }
 }

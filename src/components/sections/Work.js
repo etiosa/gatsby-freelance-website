@@ -41,11 +41,11 @@ const Work =(props)=>  {
                         <div className="work">
 
 
-                            <Link to={data.url} className={data.url === '' ?'disable list-root':'list-root'} target="_blank" rel="noopener" draggable="false">
+                            <a className={data.url === '' ?'disable list-root':'list-root'} target="_blank" rel="noopener" draggable="false">
                                 
                                 <h1>{data.Name}</h1>
 
-                            </Link>
+                            </a>
                             <span className='type'>{data.url === '' ? 'In-development' : data.type}</span>
                         </div>
 

@@ -1,16 +1,62 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { addDoc, collection, firestore, serverTimestamp } from "../../backend/firebase"
 
 
 
 const Contact = (props) => {
-    let contactRef= useState(null)
+    let contactRef = useState(null)
+    let [isDone, setDone] = useState(false)
+    let[isSend, setSend]= useState(false)
+   
+    let [contactObject, setOContactObject] = useState({
+        
+        message: '', email: '', name: '',time:''
+        
+    })
+ 
     useEffect(() => {
         props.createReferences(contactRef)
 
     }, [])
+    const send = (e) => {
+     e.preventDefault();
+    sendContact(contactObject)
+     document.getElementById('form').reset()
+}
+
+    const sendContact = async (contact) => {
+        // console.log(isDone)
+        try {
+            const docRef = await addDoc(collection(firestore, 'CONTACT'), {
+
+                name: contact.name,
+                email: contact.email,
+                message: contact.message,
+                time: serverTimestamp()
+
+
+            });
+            setDone(true)
+            console.log(docRef.id)
+
+        } catch (e) {
+            console.error("Error adding document: ", e);
+
+        }
+    }
+    const onChange = (e) => {
+        console.log(e.target['name'])
+
+            
+       // console.log("message value ",contactObject['message'])
+            setOContactObject({...contactObject,[e.target.id]:e.target.value})
+    }
+
+
+
     return (
 
-        <section className='contact-form-root' ref={el => contactRef = el} >
+        <section className='contact-form-root'  ref={el => contactRef = el} >
             <div className='contact-content'>
                {/*  <div className='contact-form-header'>
 
@@ -18,7 +64,7 @@ const Contact = (props) => {
                 </div> */}
 
                 
-                <form className='form-root'>
+                <form onSubmit={send} id='form' className='form-root'>
                     <div className='contact-title'>
                         <h1 >Let's Talk</h1>
                     </div>
@@ -34,18 +80,19 @@ const Contact = (props) => {
                             </p>
                         </div>
                         <label>Name</label>
-                        <input type="text" id="email" />
+                        <input  onChange={onChange} type="text" id="name" />
 
 
                         <label>email</label>
-                        <input type="email" id="email" />
+                    <input onChange={onChange}  type="email" id="email" />
                         <label>Message</label>
-                        <textarea id='message' />
+                    <textarea onChange={onChange} id='message' />
 
                         <button><span>Send</span></button>
 
                     </form>
-                </div>
+            </div>
+          
         
 
 
