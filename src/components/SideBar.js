@@ -5,10 +5,6 @@ const SideNavBar = (props) => {
 
 
     const goToNextSection = (section) => {
-       // console.log("sidanav", section)
-       // props.setSectionIndex(section);
-       // props.nextSection(section);
-        //console.log(props)
 
     }
 

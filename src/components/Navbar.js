@@ -50,9 +50,7 @@ const openMenu = () => {
     }
 
     const closeMenu = () => {
-        console.log('close?')
-
-        timeline.reverse(1);
+      timeline.reverse(1);
 
     }
     const gotToSection = (index) => {

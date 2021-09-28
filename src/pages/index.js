@@ -29,13 +29,12 @@ class IndexPage extends Component {
   this.mouseCurouser = document.querySelector('.cursor');
     this.worksection = document.querySelector('.work-header');
     this.work= document.querySelector('.work')
-    //console.log(this.worksection)
 
     this.view = document.querySelector('.view')
     console.log('view', this.view)
- // navlink
+ 
     this.navLink = document.querySelectorAll('.nav-link-container a');
-   // console.log(navLink)
+   
     
     //mouse move when we move
     window.addEventListener('mousemove', this.cursor)

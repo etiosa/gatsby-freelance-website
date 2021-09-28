@@ -12,9 +12,6 @@ gsap.registerPlugin(TextPlugin, RoughEase)
 
 const Home = (props) => {
     let HomeRef = useRef(null)
-
-    //button will be replace with Link
-
     useEffect(() => {
 
         props.createReferences(HomeRef);
@@ -28,29 +25,16 @@ const Home = (props) => {
             //pass it into master timeline
             masterTimeline.add(tl)
         })
-
-
-
-     
-
-
-
     }, [])
-
-
 
     const gotToSection = (index) => {
         props.gotoSection(index)
     }
 
-    
-
     return (
-
-
         <section className='home-section' ref={el => HomeRef = el} >
             <div className='home-root'>
-                <div className='text-root' style={{marginTop:'2em'}}>
+                <div className='text-root' style={{ marginTop: '2em' }}>
                     <span style={{ fontFamily: "FH OScar" }}>Hi, I'm a </span>
                     <span className='text'></span>
                 </div>
@@ -66,7 +50,10 @@ const Home = (props) => {
 
                     <span>Let's Talk</span></Link>
             </div>
-
+            <div className='root-scroll' style={{ marginTop: '10em' }}>
+                <div className="mouse"></div>
+                <p className='scrollp '>Scroll</p>
+            </div>
         </section>
 
 

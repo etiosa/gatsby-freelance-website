@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import "../../sass/index.scss"
-import { Link } from 'gatsby'
-
 
 //firebase later
 const projects = [{
@@ -23,18 +21,11 @@ const Work =(props)=>  {
         props.createReferences(workRef)
 
     }, [])
-
- 
-   
       return (
-
-
-          <section id='work' className='work-header' ref={el => workRef = el}>
-
-                    <div className='work-title'>
+<section id='work' className='work-header' ref={el => workRef = el}>
+<div className='work-title'>
                     <h1>Work</h1>
                 </div>
-
                 {projects.map(data => {
 
                     return (<div key={data.Name} className="work-root">
@@ -56,8 +47,6 @@ const Work =(props)=>  {
             </section>
         )
     }
-
-
 
 
 export default Work;

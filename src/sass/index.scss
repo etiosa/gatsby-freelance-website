@@ -29,7 +29,7 @@
 .cursor{
     width: 3rem;
     height: 3rem;
-    border: 1px solid #3B3A5C;
+    border: 1px solid #595879;
     border-radius: 50%;
     position: fixed;
     transform: translate(-50%,-50%);
@@ -42,7 +42,7 @@
 
 .active-grow{
     transform: scale(2);
-    background-color: #3B3A5C;
+    background-color: #9f9fb6;
 }
 
 a {
@@ -653,4 +653,7 @@ $animDuration: 5s;
     body{
           cursor:  unset;
     }
+}
+a{
+    color: #3B3A5C;
 }
