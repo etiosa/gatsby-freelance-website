@@ -22,19 +22,14 @@ const MobileNavBar = (props) => {
 
     
     useEffect(() => {
-
-        console.log(document.querySelectorAll('.root-logo'))
-        console.log(document.querySelectorAll('.root-logo')[0].childNodes)
         if (document.querySelectorAll('.root-logo')[0]) {
 
             const elements = document.querySelectorAll('.root-logo')[0].childNodes;
-            console.log(elements)
             elements.forEach((element, index) => {
 
                const elTime= gsap.to(element, { height: 2+index*1+'em', yoyo: true, duration: 0.5,delay:1, repeat:-1 })
                 barTimeline.add(elTime)
-                 
-                console.log(element.clientHeight)
+                
              })
         
         }
@@ -42,10 +37,7 @@ const MobileNavBar = (props) => {
         
     },[])
 
-
-  
-
-    const openMenu = () => {
+const openMenu = () => {
 
         timeline.to(bagRef.current, { clipPath: 'circle(100%)' });
         for (const child of navRef.current.children) {
@@ -62,9 +54,11 @@ const MobileNavBar = (props) => {
         timeline.reverse(1.5);
 
     }
+    const gotToSection = (index) => {
+        props.gotoSection(index)
+    }
 
-
-    return (
+ return (
         <React.Fragment>
             
             <div className='app-nav-bar'>
@@ -74,10 +68,10 @@ const MobileNavBar = (props) => {
                    <div ref={divThird}></div>
                 </div>
                 <ul className='nav-link-container'>
-                    <Link >Home</Link>
-                    <Link>Work</Link>
-                    <Link >Contact</Link>
-                    <Link >About</Link>
+                    <Link onClick={()=>{gotToSection(0)}} to='#home' >Home</Link>
+                 <Link onClick={() => { gotToSection(1) }} to='#work'>Work</Link>
+                 <Link onClick={() => { gotToSection(2) }} to='#contact'>Contact</Link>
+                 <Link onClick={() => { gotToSection(3) }} to='#about'>About</Link>
                     <Link  to='https://obasuyietiosa.com/'>Blog</Link>
                 </ul>
             </div>
@@ -94,19 +88,18 @@ const MobileNavBar = (props) => {
                 </div>
                 <ul ref={navRef} className='mobile-nav-bar' >
 
-
-                    <li>
-                        <a className='test'>Home</a>
-                    </li>
-                    <li>
-                        <a>Work</a>
-                    </li>
-                    <li>
-                        <a>Contact</a>
-                    </li>
-                    <li>
-                        <a>Blog</a>
-                    </li>
+                    <Link>
+                     <span>Home</span>
+                    </Link>
+                    <Link>
+                        <span>Work</span>
+                    </Link>
+                    <Link>
+                        <span>Contact</span>
+                    </Link>
+                    <Link>
+                        <span>Blog</span>
+                    </Link>
                 </ul>
             </div>
         </React.Fragment>)

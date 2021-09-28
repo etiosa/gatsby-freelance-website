@@ -46,7 +46,7 @@
         background-color: transparent;
         position: absolute;
         border-radius: 100%;
-        border: solid 0.01em #201f5b46;
+        border: solid 0.01em #86869226;
         z-index: -999;
         top: 2em;
         right: 2em;
@@ -68,7 +68,7 @@ grid-row-gap: 2em;
     background-color: transparent;
     position: absolute;
     border-radius: 100%;
-    border: solid 0.01em #3c38a74f;
+    border: solid 0.01em #86869226;
     z-index: -999;
     top:0;
     right:0;
@@ -81,7 +81,7 @@ grid-row-gap: 2em;
     background-color: transparent;
     position: absolute;
     border-radius: 100%;
-    border: solid 0.01em #3b3a5c49;
+    border: solid 0.01em #86869226;
     z-index: -999;
     top:-1em;
     right:10em;
@@ -106,8 +106,9 @@ h2{
     }
 }
 
-
-
+.cta:visited{
+    color: white;
+}
 
 
 
@@ -152,6 +153,7 @@ h2{
      height: 6em;
      width:6em;
      border-radius: 100%;
+     position: relative;
      border: solid 0.1em #6D6C8F;
       text-align: center;
 
@@ -161,9 +163,17 @@ h2{
          font-family: FH Oscar;
          top:2em;
      }
+
    
 }
 
+.view:hover{
+    transition: all 0.7s ease;
+    background-color: #3B3A5C;
+    span{
+        color: white;
+    }
+}
 
 @media screen and (max-width:500px){
     .home-root{

@@ -1,10 +1,4 @@
-/*@import "../Navbar/scss//navbar";
-@import "../Section/Hero/scss/Hero";
-@import "./root";
-@import "../Section/Contact/scss/Contact";
-@import "../Section/Work/scss/Work";
-@import "../Section/About/scss/About";
-@import "../Section/ProjectDetails/scss/project";*/
+
 @import "./home";
 @import "./about";
 @import "./contact";
@@ -26,6 +20,30 @@
     margin: 0;
 }
 
+.cursour-work-section{
+    background-color: #928EE2;
+    z-index: 1;
+
+}
+
+.cursor{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #3B3A5C;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform-origin: 100% 100%;
+    transition-property: background, transform;
+    z-index: -1;
+}
+
+.active-grow{
+    transform: scale(2);
+    background-color: #3B3A5C;
+}
 
 a {
     cursor: pointer;
@@ -36,10 +54,12 @@ html {
 }
 
 body {
+    scroll-behavior: smooth;
      margin: 0em;
      min-height: 100vh;
      min-width: 100vw;
      overflow-x: hidden;
+     cursor: none;
    
      font-family: ampersand;
      background-color: #D3D3E1;
@@ -465,7 +485,8 @@ $animDuration: 5s;
 .line-bg {
     width: 0.1em;
     height: 100vh;
-    background-color: #2e2e320c;
+    background-color: #9090920c;
+    ;
 
 
 
@@ -554,14 +575,7 @@ $animDuration: 5s;
 
 }
 
-.line-bg {
-    width: 0.1em;
-    height: 100vh;
-    background-color: #2e2e320c;
 
-
-
-}
 
 .last {
     background-color: blanchedalmond;

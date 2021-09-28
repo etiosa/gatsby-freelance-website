@@ -1,21 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
-const Contact = () => {
-    
+const Contact = (props) => {
+    let contactRef= useState(null)
+    useEffect(() => {
+        props.createReferences(contactRef)
+
+    }, [])
     return (
 
-        <section className='contact-form-root' style={{ height: '100vh' }} >
+        <section className='contact-form-root' ref={el => contactRef = el} >
             <div className='contact-content'>
-                <div className='contact-form-header'>
+               {/*  <div className='contact-form-header'>
 
                     <p>obasuyietiosa@gmail.com</p>
-                </div>
+                </div> */}
 
-                <div>
-                    <form className='form-root'>
-                        <div>
+                
+                <form className='form-root'>
+                    <div className='contact-title'>
+                        <h1 >Let's Talk</h1>
+                    </div>
+                        <div className='contact-p'>
                             <p>
                                 I'm always open to new creative collaborations and would
                                 love to talk about potential projects you have in mind.
@@ -39,7 +46,7 @@ const Contact = () => {
 
                     </form>
                 </div>
-            </div>
+        
 
 
 
