@@ -1,43 +1,39 @@
-import React, { useRef, useEffect } from 'react';
-import gsap from "gsap";
-import { Link } from 'gatsby';
+import React, { useRef, useEffect } from "react"
+import gsap from "gsap"
+import { Link } from "gatsby"
 
+const MobileNavBar = props => {
+  gsap.defaults({
+    duration: 0.3,
+    stagger: 1,
+  })
+  const timeline = gsap.timeline()
 
+  const barTimeline = gsap.timeline({ repeat: 1, repeatDelay: 1 })
 
-const MobileNavBar = (props) => {
+  const bagRef = useRef(null)
+  const navRef = useRef(null)
+  const divFirst = useRef(null)
+  const divSecond = useRef(null)
+  const divThird = useRef(null)
 
-    gsap.defaults({
-        duration: 0.3,
-        stagger: 1
-    })
-    const timeline = gsap.timeline();
-
-    const barTimeline = gsap.timeline({repeat:1, repeatDelay:1});
-
-    const bagRef = useRef(null)
-    const navRef = useRef(null)
-    const divFirst =useRef(null)
-    const divSecond = useRef(null)
-    const divThird = useRef(null)
-
+  useEffect(() => {
+    if (document.querySelectorAll(".root-logo")[0]) {
+      const elements = document.querySelectorAll(".root-logo")[0].childNodes
+      elements.forEach((element, index) => {
+        const elTime = gsap.to(element, {
+          height: 2 + index * 1 + "em",
+          yoyo: true,
+          duration: 0.5,
+          delay: 1,
+          repeat: -1,
+        })
+        barTimeline.add(elTime)
+      })
+    }
+  }, [])
     
-    useEffect(() => {
-        if (document.querySelectorAll('.root-logo')[0]) {
-
-            const elements = document.querySelectorAll('.root-logo')[0].childNodes;
-            elements.forEach((element, index) => {
-
-               const elTime= gsap.to(element, { height: 2+index*1+'em', yoyo: true, duration: 0.5,delay:1, repeat:-1 })
-                barTimeline.add(elTime)
-                
-             })
-        
-        }
-
-        
-    },[])
-
-const openMenu = () => {
+    const openMenu = () => {
 
         timeline.to(bagRef.current, { clipPath: 'circle(100%)' });
         for (const child of navRef.current.children) {
@@ -118,4 +114,4 @@ const openMenu = () => {
         </React.Fragment>)
 }
 
-export default MobileNavBar;
+export default MobileNavBar

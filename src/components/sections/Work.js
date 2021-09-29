@@ -1,18 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react"
 import "../../sass/index.scss"
 
 //firebase later
-const projects = [{
-    Name: 'Morjoy candles', url: 'https://www.morjoycandles.com/', type: 'Website'
-},
-    { Name: 'Etiosa Obasuyi', url: 'https://etiosaobasuyi.com/', type: 'Website' },
-    { Name: 'Black & Brown LLC', url: 'https://bbequitydreams.com/', type: 'Website' },
-    { Name: 'Onyedap', url: 'https://onyeone.com/' , type:'Website'},
-{ Name: 'Radioactive Games LLC', url: '', type: 'Website' },
-    { Name: 'PCI Painting', url: '' },
-    { Name: 'Wholesalerskite', url: 'https://wholesalerstarterkit.com/', type: 'Website' },
-{ Name: 'Cop-op Pad', url: '', type: 'Mobile App' },
-    { Name: 'Jules Market', url: 'https://julesafrimarket.com/', type: 'Website' },
+const projects = [
+  {
+    Name: "Morjoy candles",
+    url: "https://www.morjoycandles.com/",
+    type: "Website",
+  },
+  {
+    Name: "Etiosa Obasuyi",
+    url: "https://etiosaobasuyi.com/",
+    type: "Website",
+  },
+  {
+    Name: "Black & Brown LLC",
+    url: "https://bbequitydreams.com/",
+    type: "Website",
+  },
+  { Name: "Onyedap", url: "https://onyeone.com/", type: "Website" },
+  { Name: "Radioactive Games LLC", url: "", type: "Website" },
+  { Name: "PCI Painting", url: "" },
+  {
+    Name: "Wholesalerskite",
+    url: "https://wholesalerstarterkit.com/",
+    type: "Website",
+  },
+  { Name: "Cop-op Pad", url: "", type: "Mobile App" },
+  {
+    Name: "Jules Market",
+    url: "https://julesafrimarket.com/",
+    type: "Website",
+  },
 ]
 const Work =(props)=>  {
     let workRef  = useState(null)
@@ -50,6 +69,5 @@ const Work =(props)=>  {
 
 
 export default Work;
-
 
 

@@ -1,13 +1,17 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from "react"
 
 import "../../sass/index.scss"
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 import gsap from "gsap"
 import { TextPlugin } from "gsap/TextPlugin"
 import { RoughEase } from "gsap/EasePack"
 
-
-const words = ["Full-Stack developer", 'UI/UX Designer', "Web Designer", "Mobile App Developer"]
+const words = [
+  "Full-Stack developer",
+  "UI/UX Designer",
+  "Web Designer",
+  "Mobile App Developer",
+]
 gsap.registerPlugin(TextPlugin, RoughEase)
 
 const Home = (props) => {
@@ -62,5 +66,4 @@ const Home = (props) => {
 
 }
 
-
-export default Home;
+export default Home

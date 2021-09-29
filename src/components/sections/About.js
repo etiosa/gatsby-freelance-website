@@ -34,10 +34,7 @@ const About = (props) => {
                 </div>
             </div>
     </section>
-    )
-
-
+  )
 }
 
-
-export default About;
+export default About

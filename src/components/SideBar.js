@@ -55,7 +55,4 @@ const SideNavBar = (props) => {
     )
 }
 
-
-
-
-export default SideNavBar;
+export default SideNavBar

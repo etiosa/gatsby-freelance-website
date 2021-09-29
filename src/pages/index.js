@@ -1,30 +1,27 @@
-import React,{Component} from "react"
+import React, { Component } from "react"
 import "../sass/index.scss"
 import About from "../components/sections/About"
 import Contact from "../components/sections/Contact"
 import Home from "../components/sections/Home"
-import Work from "../components/sections/Work";
-import gsap from "gsap";
+import Work from "../components/sections/Work"
+import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
-
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Line from "../components/line";
+import Line from "../components/line"
 import Navbar from "../components/Navbar"
 
 gsap.registerPlugin(ScrollToPlugin)
 //const MAX_SECTION=2
-const arrayRef = [];
+const arrayRef = []
 
 class IndexPage extends Component {
   state = {
     MAX_SECTION: 4,
-    currentIndex: 0
+    currentIndex: 0,
   }
- 
-  componentDidMount() {
-
+    componentDidMount(){
   this.mouseCurouser = document.querySelector('.cursor');
     this.worksection = document.querySelector('.work-header');
     this.work= document.querySelector('.work')
@@ -36,46 +33,37 @@ class IndexPage extends Component {
    
     
     //mouse move when we move
-    window.addEventListener('mousemove', this.cursor)
+    window.addEventListener("mousemove", this.cursor)
 
     this.navLink.forEach(link => {
-      link.addEventListener('mouseover', () => {
-        this.mouseCurouser.classList.add('active-grow')
+      link.addEventListener("mouseover", () => {
+        this.mouseCurouser.classList.add("active-grow")
       })
 
-      link.addEventListener('mouseleave', () => {
-        this.mouseCurouser.classList.remove('active-grow')
+      link.addEventListener("mouseleave", () => {
+        this.mouseCurouser.classList.remove("active-grow")
       })
     })
-    this.worksection.addEventListener('mouseover', () => {
-     
-      this.mouseCurouser.classList.add('cursour-work-section')
-      this.mouseCurouser.style.zIndex = 1;
+    this.worksection.addEventListener("mouseover", () => {
+      this.mouseCurouser.classList.add("cursour-work-section")
+      this.mouseCurouser.style.zIndex = 1
       console.log(this.mouseCurouser)
-      
     })
- 
-    this.worksection.addEventListener('mouseleave', () => {
 
-      this.mouseCurouser.classList.remove('cursour-work-section')
-      this.mouseCurouser.style.zIndex = -1;
-      
+    this.worksection.addEventListener("mouseleave", () => {
+      this.mouseCurouser.classList.remove("cursour-work-section")
+      this.mouseCurouser.style.zIndex = -1
     })
-    this.work.addEventListener('mouseover', () => {
-      this.work.classList.add('.work-cursour-over')
-
-    }) 
-
+    this.work.addEventListener("mouseover", () => {
+      this.work.classList.add(".work-cursour-over")
+    })
   }
-  cursor = (e) => {
-    
+  cursor = e => {
     this.mouseCurouser.style.top = e.clientY + "px"
-    this.mouseCurouser.style.left = e.clientX+ "px"
-
-    
+    this.mouseCurouser.style.left = e.clientX + "px"
   }
 
-  createReferences = (ref) => {
+  createReferences = ref => {
     if (arrayRef.length !== this.state.MAX_SECTION) {
       arrayRef.push(ref)
     }
@@ -88,8 +76,12 @@ class IndexPage extends Component {
 
     timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 1, ease: "power2.out",delay:1 });
 
+    timeline.to(window, {
+      scrollTo: arrayRef[index].offsetTop,
+      duration: 0.6,
+      ease: "power2.out",
+    })
   }
- 
 
   render() {
     return (
