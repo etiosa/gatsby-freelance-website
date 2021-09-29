@@ -8,11 +8,8 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Three from "three.js"
 
 const Layout = ({ children }) => {
-  console.log("Layout")
-  console.log(Three)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

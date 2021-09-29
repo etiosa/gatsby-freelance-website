@@ -33,95 +33,73 @@ const MobileNavBar = props => {
     }
   }, [])
 
-  const openMenu = () => {
-    timeline.to(bagRef.current, { clipPath: "circle(100%)" })
-    for (const child of navRef.current.children) {
-      timeline.to(child.children, { opacity: 1 })
+    const closeMenu = () => {
+      timeline.reverse(1);
+
     }
-    if (timeline.reversed()) {
-      timeline.play()
+    const gotToSection = (index) => {
+        closeMenu()
+        props.gotoSection(index, closeMenu)
+       
     }
-  }
 
-  const closeMenu = () => {
-    timeline.reverse(1.5)
-  }
-  const gotToSection = index => {
-    props.gotoSection(index)
-  }
+ return (
+        <React.Fragment>
+            
+            <div className='app-nav-bar'>
+                <div className='root-logo'>
+                    <div ref={divFirst}></div>
+                    <div ref={divSecond}></div>
+                   <div ref={divThird}></div>
+                </div>
+                <ul className='nav-link-container'>
+                    <Link onClick={()=>{gotToSection(0)}} to='#home' >Home</Link>
+                 <Link onClick={() => { gotToSection(1) }} to='#work'>Work</Link>
+                 <Link onClick={() => { gotToSection(2) }} to='#contact'>Contact</Link>
+                 <Link onClick={() => { gotToSection(3) }} to='#about'>About</Link>
+                    <Link  to='https://obasuyietiosa.com/'>Blog</Link>
+                </ul>
+            </div>
 
-  return (
-    <React.Fragment>
-      <div className="app-nav-bar">
-        <div className="root-logo">
-          <div ref={divFirst}></div>
-          <div ref={divSecond}></div>
-          <div ref={divThird}></div>
-        </div>
-        <ul className="nav-link-container">
-          <Link
-            onClick={() => {
-              gotToSection(0)
-            }}
-            to="#home"
-          >
-            Home
-          </Link>
-          <Link
-            onClick={() => {
-              gotToSection(1)
-            }}
-            to="#work"
-          >
-            Work
-          </Link>
-          <Link
-            onClick={() => {
-              gotToSection(2)
-            }}
-            to="#contact"
-          >
-            Contact
-          </Link>
-          <Link
-            onClick={() => {
-              gotToSection(3)
-            }}
-            to="#about"
-          >
-            About
-          </Link>
-          <Link to="https://obasuyietiosa.com/">Blog</Link>
-        </ul>
-      </div>
+            <div className='mobile-menu' onClick={openMenu}>
+                <div></div>
+                <div></div>
+            </div>
 
-      <div className="mobile-menu" onClick={openMenu}>
-        <div></div>
-        <div></div>
-      </div>
-
-      <div className="mobile-open-menu-bg" ref={bagRef}>
-        <div className="mobile-menu-close" onClick={closeMenu}>
-          <div></div>
-          <div></div>
-        </div>
-        <ul ref={navRef} className="mobile-nav-bar">
-          <Link>
-            <span>Home</span>
-          </Link>
-          <Link>
-            <span>Work</span>
-          </Link>
-          <Link>
-            <span>Contact</span>
-          </Link>
-          <Link>
-            <span>Blog</span>
-          </Link>
-        </ul>
-      </div>
-    </React.Fragment>
-  )
+            <div className='mobile-open-menu-bg' ref={bagRef} >
+                <div className='mobile-menu-close' onClick={closeMenu}>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul ref={navRef} className='mobile-nav-bar' >
+                    <li>
+                     <Link onClick={() => { gotToSection(0) }} to='#home'>
+                     <span>Home</span>
+                    </Link>
+                 </li>
+                 <li>
+                     <Link onClick={() => { gotToSection(1) }} to='#work'>
+                        <span>Work</span>
+                    </Link>
+                 </li>
+                 <li>
+                     <Link onClick={() => { gotToSection(2) }} to='#about'>
+                        <span>About</span>
+                    </Link>
+                 </li>
+                 <li>
+                     <Link onClick={() => { gotToSection(3) }} to='#contact'>
+                         <span>Contact</span>
+                     </Link>
+                 </li>
+                 <li>
+                     <a href='https://obasuyietiosa.com/'>
+                        <span>Blog</span>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </React.Fragment>)
 }
 
 export default MobileNavBar

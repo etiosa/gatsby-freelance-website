@@ -6,7 +6,6 @@ import Home from "../components/sections/Home"
 import Work from "../components/sections/Work"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
-import GlobalState from "../GlobalState"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -23,6 +22,7 @@ class IndexPage extends Component {
     currentIndex: 0,
   }
 
+<<<<<<< HEAD
   componentDidMount() {
     this.mouseCurouser = document.querySelector(".cursor")
     this.worksection = document.querySelector(".work-header")
@@ -35,6 +35,18 @@ class IndexPage extends Component {
     this.navLink = document.querySelectorAll(".nav-link-container a")
     // console.log(navLink)
 
+=======
+  this.mouseCurouser = document.querySelector('.cursor');
+    this.worksection = document.querySelector('.work-header');
+    this.work= document.querySelector('.work')
+
+    this.view = document.querySelector('.view')
+    console.log('view', this.view)
+ 
+    this.navLink = document.querySelectorAll('.nav-link-container a');
+   
+    
+>>>>>>> main
     //mouse move when we move
     window.addEventListener("mousemove", this.cursor)
 
@@ -73,8 +85,16 @@ class IndexPage extends Component {
     console.log(arrayRef)
   }
 
+<<<<<<< HEAD
   gotoSection = index => {
     const timeline = gsap.timeline()
+=======
+  gotoSection = (index) => {
+    const timeline = gsap.timeline();
+ 
+
+    timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 1, ease: "power2.out",delay:1 });
+>>>>>>> main
 
     timeline.to(window, {
       scrollTo: arrayRef[index].offsetTop,
@@ -85,6 +105,7 @@ class IndexPage extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <GlobalState.Provider>
         <Layout>
           <Seo title="Home" />
@@ -101,6 +122,20 @@ class IndexPage extends Component {
           <Contact createReferences={this.createReferences} />
         </Layout>
       </GlobalState.Provider>
+=======
+     
+      <Layout>
+        <Seo title="Home" />
+        <div className='cursor'></div>
+        <Line/>
+        <Navbar gotoSection={this.gotoSection} />
+        <Home gotoSection={this.gotoSection}  createReferences={ this.createReferences}/>
+       
+         <Work createReferences={this.createReferences}/>  
+        <About createReferences={this.createReferences}/> 
+        <Contact createReferences={this.createReferences} />
+      </Layout>
+>>>>>>> main
     )
   }
 }

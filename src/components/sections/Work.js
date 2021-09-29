@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import "../../sass/index.scss"
-import { Link } from "gatsby"
 
 //firebase later
 const projects = [
@@ -34,40 +33,43 @@ const projects = [
     type: "Website",
   },
 ]
-const Work = props => {
-  let workRef = useState(null)
+const Work =(props)=>  {
+    let workRef  = useState(null)
+    
+    useEffect(() => {
+        props.createReferences(workRef)
 
-  useEffect(() => {
-    props.createReferences(workRef)
-  }, [])
+    }, [])
+      return (
+<section id='work' className='work-header' ref={el => workRef = el}>
+<div className='work-title'>
+                    <h1>Work</h1>
+                </div>
+                {projects.map(data => {
 
-  return (
-    <section id="work" className="work-header" ref={el => (workRef = el)}>
-      <div className="work-title">
-        <h1>Work</h1>
-      </div>
+                    return (<div key={data.Name} className="work-root">
+                        <div className="work">
 
-      {projects.map(data => {
-        return (
-          <div key={data.Name} className="work-root">
-            <div className="work">
-              <a
-                className={data.url === "" ? "disable list-root" : "list-root"}
-                target="_blank"
-                rel="noopener"
-                draggable="false"
-              >
-                <h1>{data.Name}</h1>
-              </a>
-              <span className="type">
-                {data.url === "" ? "In-development" : data.type}
-              </span>
-            </div>
-          </div>
+
+                            <a className={data.url === '' ?'disable list-root':'list-root'} target="_blank" rel="noopener" draggable="false">
+                                
+                                <h1>{data.Name}</h1>
+
+                            </a>
+                            <span className='type'>{data.url === '' ? 'In-development' : data.type}</span>
+                        </div>
+
+                    </div>
+
+                    )
+                })}
+            </section>
         )
-      })}
-    </section>
-  )
-}
+    }
+
+
+export default Work;
+
+
 
 export default Work
