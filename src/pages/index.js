@@ -6,7 +6,6 @@ import Home from "../components/sections/Home"
 import Work from "../components/sections/Work";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
-import GlobalState from "../GlobalState"
 
 
 import Layout from "../components/layout"
@@ -94,7 +93,7 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <GlobalState.Provider>
+     
       <Layout>
         <Seo title="Home" />
         <div className='cursor'></div>
@@ -106,7 +105,6 @@ class IndexPage extends Component {
         <About createReferences={this.createReferences}/> 
         <Contact createReferences={this.createReferences} />
       </Layout>
-      </GlobalState.Provider>
     )
   }
 }
