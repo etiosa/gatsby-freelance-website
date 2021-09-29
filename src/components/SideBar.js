@@ -1,65 +1,41 @@
-import React from 'react'
+import React from "react"
 
+const SideNavBar = props => {
+  const goToNextSection = section => {
+    // console.log("sidanav", section)
+    // props.setSectionIndex(section);
+    // props.nextSection(section);
+    //console.log(props)
+  }
 
-const SideNavBar = (props) => {
+  return (
+    <>
+      <div className="root-nav-bar">
+        <nav className="sideMobileNav-root                                                                                                                                                                      ">
+          <li>
+            <a onClick={goToNextSection} href="#"></a>
+          </li>
+          <li>
+            <a></a>
+          </li>
+          <li>
+            <a></a>
+          </li>
+        </nav>
 
-
-    const goToNextSection = (section) => {
-       // console.log("sidanav", section)
-       // props.setSectionIndex(section);
-       // props.nextSection(section);
-        //console.log(props)
-
-    }
-
-    return (
-        <>
-            <div className='root-nav-bar'>
-                <nav className='sideMobileNav-root                                                                                                                                                                      '>
-                    <li>
-                        <a onClick={goToNextSection} href='#'></a>
-
-                    </li>
-                    <li>
-                        <a></a>
-
-                    </li>
-                    <li>
-                        <a></a>
-
-                    </li>
-                </nav>
-
-                <nav className='sideNav-root'>
-
-
-
-                    <li className='not-ActiveLink' >
-
-
-                    </li>
-                    <li className='not-ActiveLink'>
-
-
-                    </li>
-                    <li className='activeLink' >
-                        <span className='toothtip'>Contact</span>
-
-                    </li>
-                    <li className='activeLink'  >
-                        <span className='toothtip'>Contact</span>
-
-                    </li>
-
-
-                </nav>
-            </div>
-
-        </>
-    )
+        <nav className="sideNav-root">
+          <li className="not-ActiveLink"></li>
+          <li className="not-ActiveLink"></li>
+          <li className="activeLink">
+            <span className="toothtip">Contact</span>
+          </li>
+          <li className="activeLink">
+            <span className="toothtip">Contact</span>
+          </li>
+        </nav>
+      </div>
+    </>
+  )
 }
 
-
-
-
-export default SideNavBar;
+export default SideNavBar
