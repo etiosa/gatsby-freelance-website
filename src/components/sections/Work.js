@@ -71,5 +71,3 @@ const Work =(props)=>  {
 export default Work;
 
 
-
-export default Work

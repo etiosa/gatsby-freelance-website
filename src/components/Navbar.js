@@ -32,6 +32,18 @@ const MobileNavBar = props => {
       })
     }
   }, [])
+    
+    const openMenu = () => {
+
+        timeline.to(bagRef.current, { clipPath: 'circle(100%)' });
+        for (const child of navRef.current.children) {
+            timeline.to(child.children, { opacity: 1, });
+        }
+        if (timeline.reversed()) {
+            timeline.play();
+        }
+
+    }
 
     const closeMenu = () => {
       timeline.reverse(1);
