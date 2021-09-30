@@ -51,7 +51,7 @@ const Work =(props)=>  {
                         <div className="work">
 
 
-                            <a className={data.url === '' ?'disable list-root':'list-root'} target="_blank" rel="noopener" draggable="false">
+                            <a  href={data.url} className={data.url === '' ?'disable list-root':'list-root'} target="_blank" rel="noopener" draggable="false">
                                 
                                 <h1>{data.Name}</h1>
 

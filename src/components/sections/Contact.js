@@ -25,6 +25,7 @@ const Contact = (props) => {
     }
 
     const sendContact = async (contact) => {
+        setSend(true)
 
         try {
             const docRef = await addDoc(collection(firestore, 'CONTACT'), {
@@ -37,6 +38,7 @@ const Contact = (props) => {
 
             });
             setDone(true)
+            setSend(false)
             console.log(docRef.id)
 
         } catch (e) {
@@ -52,11 +54,6 @@ const Contact = (props) => {
 
         <section className='contact-form-root' ref={el => contactRef = el} >
             <div className='contact-content'>
-                {/*  <div className='contact-form-header'>
-
-                    <p>obasuyietiosa@gmail.com</p>
-                </div> */}
-
 
                 <form onSubmit={send} id='form' className='form-root'>
                     <div className='contact-title'>
@@ -74,13 +71,19 @@ const Contact = (props) => {
                         </p>
                     </div>
                     <label>Name</label>
-                    <input onChange={onChange} type="text" id="name" />
+                    <input required onChange={onChange} type="text" id="name" />
 
 
-                    <label>email</label>
-                    <input onChange={onChange} type="email" id="email" />
+                    <label>Email</label>
+                    <input required onChange={onChange} type="email" id="email" />
                     <label>Message</label>
-                    <textarea onChange={onChange} id='message' />
+                    <textarea required onChange={onChange} id='message' />
+                    <div style={{ textAlign: 'center', marginTop: '0.6em' }}>
+                        {isSend ? <p>Sending.....</p> : null}
+                        {isDone ? <p style={{ fontWeight: 'bold', color: '#042904' }}>Thank you for reaching out</p> : null}
+
+
+                    </div>
 
                     <button><span>Send</span></button>
 

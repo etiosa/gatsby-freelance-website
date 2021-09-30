@@ -67,21 +67,16 @@ class IndexPage extends Component {
     if (arrayRef.length !== this.state.MAX_SECTION) {
       arrayRef.push(ref)
     }
-    console.log(arrayRef)
   }
 
   gotoSection = (index) => {
     const timeline = gsap.timeline();
  
 
-    timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 1, ease: "power2.out",delay:1 });
+    timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 1, ease: "power2.out", delay: 0 });
 
-    timeline.to(window, {
-      scrollTo: arrayRef[index].offsetTop,
-      duration: 0.6,
-      ease: "power2.out",
-    })
   }
+  goToSectiomobile =(index)=>{}
 
   render() {
     return (
