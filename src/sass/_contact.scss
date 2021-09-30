@@ -105,14 +105,19 @@
         color: #3B3A5C;
         font-family: FH OScar;
         margin-bottom: 2em;
+        &::after{
+            content: '*';
+            color: red;
+        }
     }
 
     button {
         border: none;
         padding: 1em;
-        margin-top: 5em;
+        margin-top: 2em;
         width: 10em;
         background-color: #3B3A5C;
+        margin-bottom: 3em;
 
 
         span {

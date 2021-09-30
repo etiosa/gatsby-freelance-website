@@ -49,8 +49,8 @@ const Home = (props) => {
                     and intuitive user interface that will enthrall and engage your users</p>
             </div>
             <div className='link-root'>
-                <Link className='cta' to='#contact' onClick={() => { gotToSection(1) }}><span>View My Work</span></Link>
-                <Link className='view' to='#work' onClick={() => { gotToSection(3) }}>
+                <Link className='cta' to='#work' onClick={() => { gotToSection(1) }}><span>View My Work</span></Link>
+                <Link className='view' to='#contact' onClick={() => { gotToSection(3) }}>
 
                     <span>Let's Talk</span></Link>
             </div>

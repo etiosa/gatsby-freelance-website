@@ -49,39 +49,9 @@
 .hover-links{
     color: white;
 }
-
-
-
-
-
 a {
     text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .mobile-nav-bar {
     display: flex;
@@ -154,19 +124,20 @@ a {
 
 .mobile-menu {
 
-    float: right;
-    display: block;
-    width: 2em;
-    padding: 1em;
-    position: relative;
-    margin-top: -2.5em;
-    cursor: pointer;
-    //background: red;
-    height: 0em;
-    z-index: 1;
-    /* width: 0em; */
-    left: -5em;
-    //margin-bottom: 10em;
+  float: right;
+  display: block;
+  /* width: 2em; */
+  /* padding: 1em; */
+  position: relative;
+  margin-top: -2.5em;
+  cursor: pointer;
+  /* height: 0em; */
+  z-index: 1;
+  /* width: 0em; */
+  /* left: -5em; */
+  margin-left: 5em;
+  margin-right: 3em;
+  top: 1em;
 
     div:first-of-type {
         // display: block;

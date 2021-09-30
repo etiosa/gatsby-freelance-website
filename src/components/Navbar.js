@@ -51,8 +51,13 @@ const MobileNavBar = props => {
     }
     const gotToSection = (index) => {
         closeMenu()
-        props.gotoSection(index, closeMenu)
+        props.gotoSection(index)
        
+    }
+
+    const gotToSectionNONMobile = (index)=>{
+        props.gotoSection(index)
+
     }
 
  return (
@@ -65,10 +70,10 @@ const MobileNavBar = props => {
                    <div ref={divThird}></div>
                 </div>
                 <ul className='nav-link-container'>
-                    <Link onClick={()=>{gotToSection(0)}} to='#home' >Home</Link>
-                 <Link onClick={() => { gotToSection(1) }} to='#work'>Work</Link>
-                 <Link onClick={() => { gotToSection(2) }} to='#contact'>Contact</Link>
-                 <Link onClick={() => { gotToSection(3) }} to='#about'>About</Link>
+                 <Link onClick={() => { gotToSectionNONMobile(0)}} to='#home' >Home</Link>
+                 <Link onClick={() => { gotToSectionNONMobile (1) }} to='#work'>Work</Link>
+                 <Link onClick={() => { gotToSectionNONMobile (3) }} to='#contact'>Contact</Link>
+                 <Link onClick={() => { gotToSectionNONMobile (2) }} to='#about'>About</Link>
                     <Link  to='https://obasuyietiosa.com/'>Blog</Link>
                 </ul>
             </div>
