@@ -71,10 +71,9 @@ const MobileNavBar = props => {
                 </div>
                 <ul className='nav-link-container'>
                  <Link onClick={() => { gotToSectionNONMobile(0)}} to='#home' >Home</Link>
-                 <Link onClick={() => { gotToSectionNONMobile (1) }} to='#work'>Work</Link>
+                 <Link onClick={() => { gotToSectionNONMobile(1) }} to='#work'>Work</Link>
+                 <Link onClick={() => { gotToSectionNONMobile(2) }} to='#about'>About</Link>
                  <Link onClick={() => { gotToSectionNONMobile (3) }} to='#contact'>Contact</Link>
-                 <Link onClick={() => { gotToSectionNONMobile (2) }} to='#about'>About</Link>
-                    <Link  to='https://obasuyietiosa.com/'>Blog</Link>
                 </ul>
             </div>
 
@@ -109,11 +108,6 @@ const MobileNavBar = props => {
                          <span>Contact</span>
                      </Link>
                  </li>
-                 <li>
-                     <a href='https://obasuyietiosa.com/'>
-                        <span>Blog</span>
-                    </a>
-                    </li>
                 </ul>
             </div>
         </React.Fragment>)
