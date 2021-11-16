@@ -73,7 +73,7 @@ const MobileNavBar = props => {
                  <Link onClick={() => { gotToSectionNONMobile(0)}} to='#home' >Home</Link>
                  <Link onClick={() => { gotToSectionNONMobile(1) }} to='#work'>Work</Link>
                  <Link onClick={() => { gotToSectionNONMobile(2) }} to='#about'>About</Link>
-                 <Link onClick={() => { gotToSectionNONMobile (3) }} to='#contact'>Contact</Link>
+                 <Link onClick={() => { gotToSectionNONMobile(3) }} to='#contact'>Contact</Link>
                 </ul>
             </div>
 

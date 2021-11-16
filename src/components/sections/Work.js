@@ -40,7 +40,7 @@ const Work =(props)=>  {
     }, [])
       return (
 <section id='work' className='work-header' ref={el => workRef = el}>
-<div className='work-title'>
+        <div className='work-title'>
                     <h1>Work</h1>
                 </div>
                 {projects.map(data => {
