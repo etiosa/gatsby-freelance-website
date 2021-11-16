@@ -148,6 +148,7 @@ class IndexPage extends Component {
         
         <Home />
         <Work />
+        <About />
       
      
     
