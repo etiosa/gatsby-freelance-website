@@ -29,41 +29,41 @@ const projects = [
   { Name: "PCI Painting", url: "" },
   { Name: "Green House llC", url: "", type: "Website" },
   { Name: "Cop-op Pad", url: "", type: "Mobile App" },
-  
+
 ]
-const Work =(props)=>  {
-    let workRef  = useState(null)
-    
-    useEffect(() => {
-        props.createReferences(workRef)
+const Work = (props) => {
+  let workRef = useState(null)
 
-    }, [])
-      return (
-<section id='work' className='work-header' ref={el => workRef = el}>
-        <div className='work-title'>
-                    <h1>Work</h1>
-                </div>
-                {projects.map(data => {
+  useEffect(() => {
+    props.createReferences(workRef)
 
-                    return (<div key={data.Name} className="work-root">
-                        <div className="work">
+  }, [])
+  return (
+    <section id='work' className='work-header' ref={el => workRef = el}>
+      <div className='work-title'>
+        <h1>Work</h1>
+      </div>
+      {projects.map(data => {
+
+        return (<div key={data.Name} className="work-root">
+          <div className="work">
 
 
-                            <a  href={data.url} className={data.url === '' ?'disable list-root':'list-root'} target="_blank" rel="noopener" draggable="false">
-                                
-                                <h1>{data.Name}</h1>
+            <a href={data.url} className={data.url === '' ? 'disable list-root' : 'list-root'} target="_blank" rel="noopener" draggable="false">
 
-                            </a>
-                            <span className='type'>{data.url === '' ? 'In-development' : data.type}</span>
-                        </div>
+              <h1>{data.Name}</h1>
 
-                    </div>
+            </a>
+            <span className='type'>{data.url === '' ? 'In-development' : data.type}</span>
+          </div>
 
-                    )
-                })}
-            </section>
+        </div>
+
         )
-    }
+      })}
+    </section>
+  )
+}
 
 
 export default Work;

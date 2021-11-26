@@ -7,10 +7,10 @@ import { TextPlugin } from "gsap/TextPlugin"
 import { RoughEase } from "gsap/EasePack"
 
 const words = [
-  "Full-Stack developer",
-  "UI/UX Designer",
-  "Web Designer",
-  "Mobile App Developer",
+    "Full-Stack developer",
+    "UI/UX Designer",
+    "Web Designer",
+    "Mobile App Developer",
 ]
 gsap.registerPlugin(TextPlugin, RoughEase)
 
@@ -25,8 +25,6 @@ const Home = (props) => {
 
             let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 })
             tl.to('.text', { duration: 1, text: word, ease: 'power2.inout' })
-
-            //pass it into master timeline
             masterTimeline.add(tl)
         })
     }, [])

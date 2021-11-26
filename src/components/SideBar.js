@@ -18,7 +18,6 @@ const SideNavBar = (props) => {
                     </li>
                     <li>
                         <a></a>
-
                     </li>
                     <li>
                         <a></a>
@@ -27,20 +26,12 @@ const SideNavBar = (props) => {
                 </nav>
 
                 <nav className='sideNav-root'>
-
-
-
                     <li className='not-ActiveLink' >
-
-
                     </li>
                     <li className='not-ActiveLink'>
-
-
                     </li>
                     <li className='activeLink' >
                         <span className='toothtip'>Contact</span>
-
                     </li>
                     <li className='activeLink'  >
                         <span className='toothtip'>Contact</span>

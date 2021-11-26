@@ -21,18 +21,14 @@ class IndexPage extends Component {
     MAX_SECTION: 4,
     currentIndex: 0,
   }
-    componentDidMount(){
-  this.mouseCurouser = document.querySelector('.cursor');
+  componentDidMount() {
+    this.mouseCurouser = document.querySelector('.cursor');
     this.worksection = document.querySelector('.work-header');
-    this.work= document.querySelector('.work')
+    this.work = document.querySelector('.work')
 
     this.view = document.querySelector('.view')
-    console.log('view', this.view)
- 
     this.navLink = document.querySelectorAll('.nav-link-container a');
-   
-    
-    //mouse move when we move
+
     window.addEventListener("mousemove", this.cursor)
 
     this.navLink.forEach(link => {
@@ -47,7 +43,6 @@ class IndexPage extends Component {
     this.worksection.addEventListener("mouseover", () => {
       this.mouseCurouser.classList.add("cursour-work-section")
       this.mouseCurouser.style.zIndex = 1
-      console.log(this.mouseCurouser)
     })
 
     this.worksection.addEventListener("mouseleave", () => {
@@ -71,25 +66,24 @@ class IndexPage extends Component {
 
   gotoSection = (index) => {
     const timeline = gsap.timeline();
- 
+
 
     timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 1, ease: "power2.out", delay: 0 });
 
   }
-  goToSectiomobile =(index)=>{}
 
   render() {
     return (
-     
+
       <Layout>
         <Seo title="Home" />
         <div className='cursor'></div>
-        <Line/>
+        <Line />
         <Navbar gotoSection={this.gotoSection} />
-        <Home gotoSection={this.gotoSection}  createReferences={ this.createReferences}/>
-       
-         <Work createReferences={this.createReferences}/>  
-        <About createReferences={this.createReferences}/> 
+        <Home gotoSection={this.gotoSection} createReferences={this.createReferences} />
+
+        <Work createReferences={this.createReferences} />
+        <About createReferences={this.createReferences} />
         <Contact createReferences={this.createReferences} />
       </Layout>
     )

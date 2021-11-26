@@ -3,13 +3,6 @@ import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-console.log("firebase")
 const firebaseConfig = {
   apiKey: "AIzaSyBx_grtrAfwbr8EaHxXECXYHpgX7iQVRhY",
   authDomain: "freelancewebsite-bdd13.firebaseapp.com",
@@ -22,7 +15,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-console.log(app)
 const firestore = getFirestore()
-console.log(firestore)
 export { collection, addDoc, firestore, serverTimestamp }

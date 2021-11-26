@@ -34,17 +34,10 @@ const Contact = (props) => {
                 email: contact.email,
                 message: contact.message,
                 time: serverTimestamp()
-
-
             });
             setDone(true)
             setSend(false)
-            console.log(docRef.id)
-
-        } catch (e) {
-            console.error("Error adding document: ", e);
-
-        }
+        } catch (e) { }
     }
     const onChange = (e) => {
         setOContactObject({ ...contactObject, [e.target.id]: e.target.value })

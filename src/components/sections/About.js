@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 
 
 const About = (props) => {
-    let aboutRef= useState(null)
+    let aboutRef = useState(null)
     useEffect(() => {
         props.createReferences(aboutRef)
 
 
-    },[])
+    }, [])
 
     return (
         <section className='about-section' ref={el => aboutRef = el} id='about'>
@@ -29,12 +29,12 @@ const About = (props) => {
                 <div className='p1-root' >
                     <p >I recently opened a game studio with a friend called RadioActive Games LLC. We are currently working
                         on our first title called the Mandala Order.</p>
-                     <p>I am looking forward to collaborating with you and creating a long-term business relationship.</p>
+                    <p>I am looking forward to collaborating with you and creating a long-term business relationship.</p>
                     <p >Have Project in mind? or just want to chat</p>
                 </div>
             </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default About
