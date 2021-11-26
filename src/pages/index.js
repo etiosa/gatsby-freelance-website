@@ -17,12 +17,7 @@ import SideNavBar from "../components/SideBar"
 import Navbar from "../components/Navbar"
 
 const arryRef = [];
-const ar = [<Home />,
 
-  <Work />,
-  <About />,
-  <Contact />
-]
 //const MAX_SECTION=2
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger );
 class IndexPage extends Component {
@@ -123,12 +118,7 @@ class IndexPage extends Component {
     }
 
 
-   //handle next section
-    // handle prev section
-
-    //click it reveal the item to you
-    //an array
-
+ 
 
 
   }
@@ -147,8 +137,8 @@ class IndexPage extends Component {
         <Navbar />
         
         <Home />
-        <Work />
-        <About />
+        
+       
       
      
     
