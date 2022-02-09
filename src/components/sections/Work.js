@@ -26,9 +26,8 @@ const projects = [
     type: "Website",
   },
   { Name: "Radioactive Games LLC", url: "", type: "Website" },
-  { Name: "PCI Painting", url: "" },
   { Name: "Green House llC", url: "", type: "Website" },
-  { Name: "Cop-op Pad", url: "", type: "Mobile App" },
+  { Name: "Vision Art Gallery", url: "", type: "Website" },
 
 ]
 const Work = (props) => {
@@ -47,19 +46,12 @@ const Work = (props) => {
 
         return (<div key={data.Name} className="work-root">
           <div className="work">
-
-
             <a href={data.url} className={data.url === '' ? 'disable list-root' : 'list-root'} target="_blank" rel="noopener" draggable="false">
-
               <h1>{data.Name}</h1>
-
             </a>
             <span className='type'>{data.url === '' ? 'In-development' : data.type}</span>
           </div>
-
-        </div>
-
-        )
+        </div>)
       })}
     </section>
   )

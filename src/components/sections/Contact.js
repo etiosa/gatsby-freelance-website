@@ -74,20 +74,10 @@ const Contact = (props) => {
                     <div style={{ textAlign: 'center', marginTop: '0.6em' }}>
                         {isSend ? <p>Sending.....</p> : null}
                         {isDone ? <p style={{ fontWeight: 'bold', color: '#042904' }}>Thank you for reaching out</p> : null}
-
-
                     </div>
-
                     <button><span>Send</span></button>
-
                 </form>
             </div>
-
-
-
-
-
-
         </section>
     )
 

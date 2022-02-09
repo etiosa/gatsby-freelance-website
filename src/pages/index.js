@@ -13,9 +13,7 @@ import Line from "../components/line"
 import Navbar from "../components/Navbar"
 
 gsap.registerPlugin(ScrollToPlugin)
-//const MAX_SECTION=2
 const arrayRef = []
-
 class IndexPage extends Component {
   state = {
     MAX_SECTION: 4,
@@ -66,22 +64,17 @@ class IndexPage extends Component {
 
   gotoSection = (index) => {
     const timeline = gsap.timeline();
-
-
     timeline.to(window, { scrollTo: arrayRef[index].offsetTop, duration: 1, ease: "power2.out", delay: 0 });
-
   }
 
   render() {
     return (
-
       <Layout>
         <Seo title="Home" />
         <div className='cursor'></div>
         <Line />
         <Navbar gotoSection={this.gotoSection} />
         <Home gotoSection={this.gotoSection} createReferences={this.createReferences} />
-
         <Work createReferences={this.createReferences} />
         <About createReferences={this.createReferences} />
         <Contact createReferences={this.createReferences} />
@@ -89,5 +82,4 @@ class IndexPage extends Component {
     )
   }
 }
-
 export default IndexPage
